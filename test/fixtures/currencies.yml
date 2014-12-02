@@ -1,0 +1,16 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+Rupee:
+  name: Rupee
+  code: in
+  country: india
+
+Dollar:
+  name: Dollar
+  code: us
+  country: USA
+
+Dollar:
+  name: Dollar
+  code: can
+  country: Canada

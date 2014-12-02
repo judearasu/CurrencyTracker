@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  t.references: MyString
+  user: MyString
+  currency_code: MyString
+
+two:
+  t.references: MyString
+  user: MyString
+  currency_code: MyString

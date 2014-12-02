@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+India:
+  name: India
+  code: in
+
+USA:
+  name: USA
+  code: us
+
+Canada:
+  name: Canada
+  code: ca
