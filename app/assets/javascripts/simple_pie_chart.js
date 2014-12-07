@@ -1,7 +1,3 @@
-// SimplePieChart
-// Author: Bradley J. Spaulding
-// Created On: 2011-04-25
-
 var SimplePieChart = {};
 
 SimplePieChart.initialize = function(root_element) { return new ViewController(root_element, {

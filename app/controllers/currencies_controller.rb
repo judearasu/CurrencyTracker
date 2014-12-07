@@ -7,6 +7,7 @@ class CurrenciesController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @currencies }
+      format.json { render json: @currencies }
     end
   end
 
@@ -31,6 +32,15 @@ class CurrenciesController < ApplicationController
       }
     }
   end
+end
+def statistic
+  user_countries = UserCurrency.user_analysis(current_user)
+  respond_to do |format|
+    format.json{ render :json => {
+      :collection => user_countries
+    }
+  }
+end
 end
   # GET /currencies/1
   # GET /currencies/1.xml
