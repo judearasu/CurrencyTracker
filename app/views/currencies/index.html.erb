@@ -32,7 +32,7 @@
         <th>Name</th>
         <th>Code</th>
         <th>Status</th>
-        <th></th>
+        
       </tr>
     </thead>
 
@@ -47,7 +47,7 @@
           <td class="name"><%= currency.name %></td>
           <td class="code"><%= currency.code %></td>
           <td class="status"><%= current_user.collect?(currency) ? 'Collected' : 'Not Collected' %></td>
-          <td><%= link_to 'Show', currency %></td>
+          
         </tr>
       <% end %>
     </tbody>

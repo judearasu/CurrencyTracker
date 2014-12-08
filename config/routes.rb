@@ -3,8 +3,16 @@ CurrencyTracker::Application.routes.draw do
 
   root :to => "currencies#index"
   
-  resources :countries, :except => [:new, :destroy]
-
+  #resources :countries, :except => [:new, :destroy]
+  #v2
+  resources :countries, :only => [:index, :show] do
+    member do
+      get :visit
+    end
+    collection do
+      get :statistic
+    end
+  end
   #resources :currencies, :only => [:index, :show]
   #V2
   resources :currencies, :only => [:index, :show] do

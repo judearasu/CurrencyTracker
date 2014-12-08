@@ -33,15 +33,9 @@ class CurrenciesController < ApplicationController
     }
   end
 end
-def statistic
-  user_countries = UserCurrency.user_analysis(current_user)
-  respond_to do |format|
-    format.json{ render :json => {
-      :collection => user_countries
-    }
-  }
-end
-end
+
+helper_method :statistic
+
   # GET /currencies/1
   # GET /currencies/1.xml
   def show
