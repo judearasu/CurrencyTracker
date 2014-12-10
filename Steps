@@ -1,0 +1,34 @@
+Todo
+------
+
+1) Authentication - Done
+2) Table structure with design  - Done
+3) Currencies visit - Need to push from local
+4) Graph - Not yet implemented
+
+Implemented Device
+
+Gems used:
+---------
+* Devise - Authentication solution
+* ransack - Object-based searching
+
+JS used:
+--------
+* Google chart script
+* Jquery methods
+
+Steps:
+------
+* Used rails 3.2.15 with ruby 2.1.0  with rbenv version manager
+* git clone
+* bundle install 
+* I have sqlite as default database
+* bundle exec rake db:create
+* bundle exec rake db:migrate
+* bundle exec rake db:seed
+* Now 244 countries will be exported to Country table
+* Now start the server bundle exec rails s
+* Added User model for user registration
+* Added Usercountry model for placing the user country codes
+* Added Usercurrency model for placing the user curreny details

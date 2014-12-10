@@ -19,7 +19,7 @@
         :"data-url" => visit_country_path(country),
         :"data-dirty" => "false") %></td>
         <td class="name"><%= country.name %></td>
-        <td class="name"><%= country.currencies.first.name if !country.currencies.first.blank? %></td>
+        <td class="name"><%= country.currencies.first.name if !country.currencies.first.blank?%></td>
         <td class="code"><%= country.code %></td>
         <td class="status"><%= current_user.visited?(country) ? 'Visited' : 'Not Visited' %></td>
 
@@ -27,3 +27,4 @@
       <% end %>
     </tbody>
   </table>
+
