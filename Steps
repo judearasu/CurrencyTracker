@@ -1,4 +1,4 @@
-Todo
+Development - Todo's
 ------
 
 1) Authentication - Done
@@ -6,7 +6,7 @@ Todo
 3) Currencies visit - Need to push from local
 4) Graph - Not yet implemented
 
-Implemented Device
+
 
 Gems used:
 ---------
@@ -32,3 +32,5 @@ Steps:
 * Added User model for user registration
 * Added Usercountry model for placing the user country codes
 * Added Usercurrency model for placing the user curreny details
+
+* For fresh user data axis alert will appear.
