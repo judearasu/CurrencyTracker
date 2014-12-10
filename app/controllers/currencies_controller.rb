@@ -2,12 +2,18 @@ class CurrenciesController < ApplicationController
   # GET /currencies
   # GET /currencies.xml
   def index
-    @currencies = Currency.all
+    #@currencies = Currency.all
 
+    #respond_to do |format|
+    #  format.html # index.html.erb
+    #  format.xml  { render :xml => @currencies }
+    #  format.json { render json: @currencies }
+    #end 
+    @q = Currency.search(params[:q])
+    @currencies = @q.result(distinct: true)
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @currencies }
-      format.json { render json: @currencies }
+      format.js
     end
   end
 

@@ -1,0 +1,28 @@
+<table id="collection">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Name</th>
+        <th>Code</th>
+        <th>Status</th>
+        
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @currencies.each do |currency| %>
+        <tr id="record_<%= currency.code %>">
+          <td><%= check_box_tag("currency[]", currency.code, current_user.collect?(currency),
+                                :id => "currency_#{currency.code}",
+                                :class=>"checkBoxClass",
+                                :"data-code" => currency.code,
+                                :"data-url" => collect_currency_path(currency),
+                                :"data-dirty" => "false") %></td>
+          <td class="name"><%= currency.name %></td>
+          <td class="code"><%= currency.code %></td>
+          <td class="status"><%= current_user.collect?(currency) ? 'Collected' : 'Not Collected' %></td>
+          
+        </tr>
+      <% end %>
+    </tbody>
+  </table>

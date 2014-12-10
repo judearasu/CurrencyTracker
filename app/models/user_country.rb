@@ -6,6 +6,8 @@ class UserCountry < ActiveRecord::Base
 
   validates :user, :presence => true, :allow_blank => false
   validates :country, :presence => true, :allow_blank => false
+  belongs_to :user
+  belongs_to :country, :foreign_key => :country_code
 
   scope :user_statistic, lambda{ |user| where(:user_id => user.id).
   	select("strftime( '%Y-%m-%d', created_at) as date, count(*) as cnt").

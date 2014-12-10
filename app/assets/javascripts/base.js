@@ -36,7 +36,7 @@ table.find("input[type='checkbox']").on("change", function(e){
 
 var check_controll = $("#select-all-controll");
 var apply_controll = $("#apply-filter-controll");
-var filter = $("#name-filter");
+var filter = $("#q_name_or_code_cont");
 var filter_updated_callback = function(e){
     var target = $(e.currentTarget);
     if(target.val().length >= 1) {
@@ -90,4 +90,16 @@ apply_controll.on("click", function(e){
         return $(this).data("dirty") === "true";
     });
     update_collection(table, $.makeArray(checkboxes), update_chart);
+});
+
+$( document ).ready(function() {
+    $('.search input').keyup(function () {
+        $.get(this.action, $(this).serialize(), null, 'script');
+        return false;
+    });
+});
+$(document).ready(function () {
+    $("#ckbCheckAll").click(function () {
+        $(".checkBoxClass").prop('checked', $(this).prop('checked'));
+    });
 });

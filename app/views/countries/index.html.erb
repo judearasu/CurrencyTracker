@@ -17,40 +17,18 @@
       </table>
     </div>
   </div>
+  <div style="clear:both"/>
+  <div style="display: inline-block;">
+   <%= search_form_for @q, class: "search" do |f| %>
+   <%= f.label :name_or_code_cont, "Search:" %>
+   <%= f.text_field :name_or_code_cont %>
+   <% end %>
+ </div>
+ <div class="filter" style="display: inline-block;">
 
+  <input type="button" value="Check/Uncheck All" id="select-all-controll" data-action="check" disabled="disabled" />
+  <input type="button" value="Visit" id="apply-filter-controll" disabled="disabled" />
+</div>
 
-  <div class="filter">
-    <label for="name-filter">Name</label>
-    <input id="name-filter" name="name" type="text" />
-    <input type="button" value="Check/Uncheck All" id="select-all-controll" data-action="check" disabled="disabled" />
-    <input type="button" value="Visit" id="apply-filter-controll" disabled="disabled" />
-  </div>
-
-  <table id="collection">
-    <thead>
-      <tr>
-        <th>Visited</th>
-        <th>Name</th>
-        <th>Code</th>
-        <th>Status</th>
-       
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @countries.each do |country| %>
-        <tr id="record_<%= country.code %>">
-          <td><%= check_box_tag("country[]", country.code, current_user.visited?(country),
-                                :id => "country_#{country.code}",
-                                :"data-code" => country.code,
-                                :"data-url" => visit_country_path(country),
-                                :"data-dirty" => "false") %></td>
-          <td class="name"><%= country.name %></td>
-          <td class="code"><%= country.code %></td>
-          <td class="status"><%= current_user.visited?(country) ? 'Visited' : 'Not Visited' %></td>
-         
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+<%=render 'table'%>
 </section>

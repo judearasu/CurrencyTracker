@@ -7,6 +7,7 @@ gem 'sqlite3'
 gem 'savon', '~>1.0'
 gem 'nokogiri'
 gem 'devise'
+gem 'ransack'
 
 group :development,:test do
   gem 'database_cleaner'

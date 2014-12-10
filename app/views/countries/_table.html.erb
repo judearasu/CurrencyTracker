@@ -1,0 +1,29 @@
+<table id="collection">
+  <thead>
+    <tr>
+      <th>Visited</th>
+      <th>Country Name</th>
+      <th>Currency Name</th>
+      <th>Code</th>
+      <th>Status</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @countries.each do |country| %>
+    <tr id="record_<%= country.code %>">
+      <td><%= check_box_tag("country[]", country.code, current_user.visited?(country),
+        :id => "country_#{country.code}",
+        :"data-code" => country.code,
+        :"data-url" => visit_country_path(country),
+        :"data-dirty" => "false") %></td>
+        <td class="name"><%= country.name %></td>
+        <td class="name"><%= country.currencies.first.name if !country.currencies.first.blank? %></td>
+        <td class="code"><%= country.code %></td>
+        <td class="status"><%= current_user.visited?(country) ? 'Visited' : 'Not Visited' %></td>
+
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
